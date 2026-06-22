@@ -23,7 +23,7 @@ export const About: React.FC = () => {
         <span className="text-xs font-bold text-emerald-500 font-mono uppercase tracking-widest block">
           01 // Technical Specialties
         </span>
-        <h2 className="text-3xl font-extrabold text-white tracking-tight">Full-Stack Capability Blueprint</h2>
+        <h2 className="text-3xl font-extrabold text-white tracking-tight">Profile</h2>
         <p className="text-sm text-neutral-400 max-w-2xl">
           An overview of technical disciplines, engineered components, and web technologies I operate every day. 
         </p>
@@ -42,7 +42,7 @@ export const About: React.FC = () => {
             <div className="border-t border-neutral-800 pt-4 space-y-2">
               <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-500 block">Core philosophy</span>
               <p className="text-xs text-neutral-200 font-mono italic">
-                "Writing clean, modular, and optimized API code to empower snappy user experiences."
+                "Writing clean, modular, and optimized API code to empower user experiences."
               </p>
             </div>
           </div>
@@ -50,7 +50,7 @@ export const About: React.FC = () => {
           <div className="hidden lg:block bg-gradient-to-br from-neutral-900 to-neutral-950 p-6 rounded-3xl border border-neutral-800">
             <h4 className="text-xs font-bold uppercase font-mono text-emerald-400 tracking-wider mb-2">Karachi Operations</h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              Available for localized integration and remote co-engineering workflows. Responsive within standard business hours on UTC+5.
+              Available for localized integration and remote co-engineering workflows.
             </p>
           </div>
         </div>
@@ -114,7 +114,7 @@ export const About: React.FC = () => {
 
             <div className="border-t border-neutral-800 pt-4 mt-6 flex items-center gap-2 text-[10px] text-neutral-500 font-mono">
               <ChevronRight className="w-3.5 h-3.5 text-emerald-500" />
-              <span>Extensive 1+ year practical application of these skill packages.</span>
+              <span></span>
             </div>
           </motion.div>
         </div>

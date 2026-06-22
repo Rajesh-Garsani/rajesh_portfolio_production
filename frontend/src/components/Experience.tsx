@@ -12,9 +12,9 @@ export const Experience: React.FC = () => {
         <span className="text-xs font-bold text-emerald-500 font-mono uppercase tracking-widest block">
           02 // Professional Experience
         </span>
-        <h2 className="text-3xl font-extrabold text-white tracking-tight">Employment History & Milestones</h2>
+        <h2 className="text-3xl font-extrabold text-white tracking-tight">Employment History</h2>
         <p className="text-sm text-neutral-400 max-w-2xl">
-          Internships and freelance software architectural engagements that structured my development philosophies.
+
         </p>
       </div>
 
@@ -50,10 +50,7 @@ export const Experience: React.FC = () => {
                     <Calendar className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
                     {exp.period}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                    Karachi Team / Remote
-                  </span>
+
                 </div>
               </div>
 

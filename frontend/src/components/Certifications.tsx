@@ -50,7 +50,7 @@ export const Certifications: React.FC = () => {
                 </div>
 
                 <p className="text-xs text-neutral-400 leading-relaxed font-sans">
-                  Rigorous curriculum focusing on Core Software Architecture, Advanced Algorithms, Databases (SQL & NoSQL), and Object Oriented Paradigms (OOP).
+
                 </p>
               </motion.div>
             ))}

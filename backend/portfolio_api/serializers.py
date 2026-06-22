@@ -4,7 +4,7 @@ from .models import Profile, SkillCategory, Experience, Project, Education, Cert
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ["name", "title", "email", "phone", "location", "github", "linkedin", "summary", "available_for_work"]
+        fields = ["name", "title", "email", "phone", "location", "github", "linkedin", 'resume_file', "summary", "available_for_work"]
 
 class SkillCategorySerializer(serializers.ModelSerializer):
     class Meta:

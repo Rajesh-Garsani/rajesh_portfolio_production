@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Sparkles, Library, Layers, Award, GraduationCap, Phone } from "lucide-react";
+import { Sparkles, Library, Layers, Award, GraduationCap, Phone, BookOpen } from "lucide-react";
 
 interface HeaderProps {
   activeSection: string;
@@ -13,6 +13,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection 
     { id: "about", label: "Skills", icon: Award },
     { id: "experience", label: "Work", icon: GraduationCap },
     { id: "projects", label: "Projects", icon: Library },
+    { id: "certifications", label: "Education", icon: BookOpen },
     { id: "ai-assistant", label: "AI Representative", icon: Sparkles },
     { id: "contact", label: "Contact", icon: Phone },
   ];
@@ -42,10 +43,10 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection 
           onClick={() => handleNavClick("hero")}
         >
           <div className="w-8 h-8 rounded bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-black font-black text-xs tracking-tighter">
-            RK
+            P
           </div>
           <span className="font-sans font-bold text-neutral-100 text-sm tracking-tight hidden sm:inline">
-            Rajesh Kumar
+            PORTFOLIO
             <span className="text-emerald-500 font-mono text-[10px] ml-1.5 px-1.5 py-0.2 bg-emerald-500/10 border border-emerald-500/25 rounded-md uppercase font-normal">
               Full Stack
             </span>

@@ -15,6 +15,7 @@ class Profile(models.Model):
     location = models.CharField(max_length=120)
     github = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
+    resume_file = models.FileField(upload_to='resumes/', blank=True, help_text="Upload your physical PDF resume here")
     summary = models.TextField()
     available_for_work = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -36,13 +37,13 @@ class Experience(OrderedModel):
     def __str__(self): return f"{self.role} — {self.company}"
 
 class Project(OrderedModel):
-    DEMO_CHOICES = [("security", "Security allocation"), ("scraping", "Learning scraper")]
+    DEMO_CHOICES = [("none", "No Interactive Demo"),("security", "Security allocation"), ("scraping", "Learning scraper")]
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=150)
     tech = models.JSONField(default=list)
     description = models.TextField()
     features = models.JSONField(default=list)
-    demo_type = models.CharField(max_length=20, choices=DEMO_CHOICES)
+    demo_type = models.CharField(max_length=20, choices=DEMO_CHOICES, default="none")
     github = models.URLField(blank=True)
     live_demo = models.URLField(blank=True)
     is_published = models.BooleanField(default=True)

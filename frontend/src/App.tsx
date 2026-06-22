@@ -113,10 +113,10 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500">
           <div className="text-center md:text-left space-y-1">
             <p className="font-semibold text-slate-400">© 2026 Rajesh Kumar. All rights reserved.</p>
-            <p className="font-mono text-[10px] text-slate-600">Built with React, Vite, Tailwind CSS, & Framer Motion</p>
+            <p className="font-mono text-[10px] text-slate-600"></p>
           </div>
           <p className="text-center md:text-right text-[10px] leading-relaxed max-w-xs text-slate-600 font-mono">
-            Designed and developed with Django REST Framework and React. Karachi, Pakistan.
+            Karachi, Pakistan.
           </p>
         </div>
       </footer>

@@ -35,9 +35,9 @@ export const Hero: React.FC = () => {
   };
 
   const stats = [
-    { label: "Core Backend", value: "Python", caption: "Django & DRF" },
-    { label: "Frontend", value: "React", caption: "Responsive interfaces" },
-    { label: "Database", value: "SQLite", caption: "Portfolio storage" },
+    { label: "Web Development", value: "Modern, Responsive, SEO Optimized", caption: "Python, Django, DRF, React" },
+    { label: "AI & Automation", value: "Lead Automation, Custom AI Solutions, Smart Notifications", caption: "Python, n8n, Firebase" },
+    { label: "Web Scraping", value: "Real-Time Data Monitoring, Custom Scraping, Automated Data Extraction", caption: "Scrapy, Selenium, Numpy, Pandas " },
   ];
 
   return (
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
         {/* Available for Hire Tag */}
         <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#121212] border border-neutral-800 rounded-full text-neutral-300">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-          <span className="text-[10px] font-mono font-bold tracking-wider uppercase">Open for High-Growth Dev Roles</span>
+          <span className="text-[10px] font-mono font-bold tracking-wider uppercase">Open for Dev Roles</span>
         </motion.div>
 
         {/* Catchy Main Heading */}
@@ -67,8 +67,8 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1]"
           >
-            Building Modern <br/>
-            <span className="text-emerald-500 underline decoration-neutral-800 underline-offset-8 font-display">Web Experiences</span>
+            RAJESH KUMAR <br/>
+            <span className="text-emerald-500 underline decoration-neutral-800 underline-offset-8 font-display"></span>
           </motion.h1>
           <motion.h2
             variants={itemVariants}
@@ -118,38 +118,52 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         {/* Action Buttons */}
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-          <button
-            onClick={() => handleScrollToSection("projects")}
-            className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black rounded-xl text-xs font-bold tracking-wider uppercase shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
-          >
-            Explore Interactive Demos
-          </button>
-          <button
-            onClick={() => handleScrollToSection("ai-assistant")}
-            className="w-full sm:w-auto px-6 py-3.5 bg-[#121212] hover:bg-neutral-900 text-white border border-neutral-800 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer"
-          >
-            Talk with AI Agent
-          </button>
-        </motion.div>
+        {/* Action Buttons */}
+        {/* Action Buttons */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <button
+              onClick={() => handleScrollToSection("projects")}
+              className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black rounded-xl text-xs font-bold tracking-wider uppercase shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
+            >
+              EXPLORE PROJECTS
+            </button>
 
+            {/* FORCE THE LINK TO HIT DJANGO DIRECTLY */}
+            {personalInfo.resume_file && (
+              <a
+                href={`http://127.0.0.1:8000${personalInfo.resume_file}`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto px-6 py-3.5 bg-[#121212] hover:bg-neutral-900 text-white border border-neutral-800 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer flex items-center justify-center"
+              >
+                RESUME
+              </a>
+            )}
+          </motion.div>
+
+        {/* Bento Stats Counter Grid */}
         {/* Bento Stats Counter Grid */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-10 text-left max-w-3xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-8 text-left max-w-2xl mx-auto"
         >
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-[#121212] border border-neutral-800 rounded-3xl p-6 flex flex-col justify-center space-y-1"
+              className="bg-[#121212] border border-neutral-800 rounded-2xl p-4 flex flex-col justify-start space-y-1.5"
             >
-              <span className="text-2xl sm:text-3xl font-extrabold text-emerald-500 font-mono">
-                {stat.value}
-              </span>
-              <span className="text-xs font-bold text-white tracking-wide font-sans">
+              {/* TITLE: Adjusted to fit smaller box */}
+              <span className="text-base sm:text-lg font-extrabold text-white tracking-wide font-sans leading-tight">
                 {stat.label}
               </span>
-              <span className="text-[10px] text-neutral-500 font-sans leading-relaxed">
+
+              {/* GREEN TEXT: Tiny sub-tag */}
+              <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-wider leading-snug">
+                {stat.value}
+              </span>
+
+              {/* CAPTION: Tech stack */}
+              <span className="text-[10px] text-neutral-500 font-mono leading-relaxed pt-1">
                 {stat.caption}
               </span>
             </div>

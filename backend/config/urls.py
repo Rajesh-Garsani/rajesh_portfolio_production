@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.urls import include, path
-from portfolio_api.views import health_check
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/health/", health_check, name="health"),
     path("api/", include("portfolio_api.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
