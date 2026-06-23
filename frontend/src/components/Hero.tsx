@@ -5,6 +5,10 @@ import { Terminal, Github, Linkedin, Mail, ArrowDown, ExternalLink } from "lucid
 
 export const Hero: React.FC = () => {
   const { data: { personalInfo } } = usePortfolio();
+  
+  // ADDED: Dynamic base URL for local testing and production deployment
+  const baseURL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -118,30 +122,27 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         {/* Action Buttons */}
-        {/* Action Buttons */}
-        {/* Action Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <button
-              onClick={() => handleScrollToSection("projects")}
-              className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black rounded-xl text-xs font-bold tracking-wider uppercase shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <button
+            onClick={() => handleScrollToSection("projects")}
+            className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black rounded-xl text-xs font-bold tracking-wider uppercase shadow-lg shadow-emerald-500/10 transition-all cursor-pointer"
+          >
+            EXPLORE PROJECTS
+          </button>
+
+          {/* UPDATED: Dynamic URL switching */}
+          {personalInfo.resume_file && (
+            <a
+              href={`${baseURL}${personalInfo.resume_file}`}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 bg-[#121212] hover:bg-neutral-900 text-white border border-neutral-800 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer flex items-center justify-center"
             >
-              EXPLORE PROJECTS
-            </button>
+              RESUME
+            </a>
+          )}
+        </motion.div>
 
-            {/* FORCE THE LINK TO HIT DJANGO DIRECTLY */}
-            {personalInfo.resume_file && (
-              <a
-                href={`http://127.0.0.1:8000${personalInfo.resume_file}`}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full sm:w-auto px-6 py-3.5 bg-[#121212] hover:bg-neutral-900 text-white border border-neutral-800 rounded-xl text-xs font-bold tracking-wider uppercase transition-all cursor-pointer flex items-center justify-center"
-              >
-                RESUME
-              </a>
-            )}
-          </motion.div>
-
-        {/* Bento Stats Counter Grid */}
         {/* Bento Stats Counter Grid */}
         <motion.div
           variants={itemVariants}
