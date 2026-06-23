@@ -6,8 +6,11 @@ import { Terminal, Github, Linkedin, Mail, ArrowDown, ExternalLink } from "lucid
 export const Hero: React.FC = () => {
   const { data: { personalInfo } } = usePortfolio();
   
-  // ADDED: Dynamic base URL for local testing and production deployment
-  const baseURL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+  // Let Vite automatically detect if we are on the live site or a local laptop
+  const isLive = import.meta.env.PROD; 
+  const baseURL = isLive 
+    ? "https://garsanirajesh.pythonanywhere.com" 
+    : "http://127.0.0.1:8000";
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
